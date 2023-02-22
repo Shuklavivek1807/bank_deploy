@@ -1,23 +1,14 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
-const {fileURLToPath} =require('url');
 
 require('./db/config')
 const User = require("./db/User");
 const Admin = require('./db/Admin');
 const Transaction = require('./db/Transaction');
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const app = express();
 app.use(express.json())
 app.use(cors());
-app.use(express.static(path.join(__dirname,'./paynow/build')));
-
-app.get("*", function (req,res){
-    res.sendFile(path.join(__dirname,"./paynow/build/index.html"))
-});
 //app.use use for post the data wich present in the body of postman.
 //express.json is function
 

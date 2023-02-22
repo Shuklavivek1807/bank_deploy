@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
     "frontend" : "npm start --prefix ./paynow",
-    "backend" : "nodemon index.js",
-    "dev": "concurrently \"npm run frontend\" \"npm start\""
+    "start" : "nodemon index.js",
+    "dev": "concurrently \"npm run frontend\" \"npm run start\""
   },
   "author": "",
   "license": "ISC",
